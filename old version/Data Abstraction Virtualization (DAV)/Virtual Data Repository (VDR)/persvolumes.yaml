@@ -1,0 +1,199 @@
+---
+
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: vol1
+  labels:
+    type: local
+spec:
+  storageClassName: managed-storage
+  capacity:
+    storage: 6Gi
+  accessModes:
+    - ReadWriteOnce
+  local:
+    path: /mnt/disk/vol1
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - kubernetes1
+
+---
+
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: vol2
+  labels:
+    type: local
+spec:
+  storageClassName: managed-storage
+  capacity:
+    storage: 6Gi
+  accessModes:
+    - ReadWriteOnce
+  local:
+    path: /mnt/disk/vol2
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - kubernetes1
+
+---
+
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: vol3
+  labels:
+    type: local
+spec:
+  storageClassName: managed-storage
+  capacity:
+    storage: 6Gi
+  accessModes:
+    - ReadWriteOnce
+  local:
+    path: /mnt/disk/vol3
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - kubernetes1
+          
+---
+
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: vol4
+  labels:
+    type: local
+spec:
+  storageClassName: managed-storage
+  capacity:
+    storage: 6Gi
+  accessModes:
+    - ReadWriteOnce
+  local:
+    path: /mnt/disk/vol4
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - kubernetes1
+
+---
+
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: vol5
+  labels:
+    type: local
+spec:
+  storageClassName: managed-storage
+  capacity:
+    storage: 6Gi
+  accessModes:
+    - ReadWriteOnce
+  local:
+    path: /mnt/disk/vol5
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - kubernetes1
+
+---
+
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: vol6
+  labels:
+    type: local
+spec:
+  storageClassName: managed-storage
+  capacity:
+    storage: 6Gi
+  accessModes:
+    - ReadWriteOnce
+  local:
+    path: /mnt/disk/vol6
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - kubernetes1
+
+---
+
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: vol7
+  labels:
+    type: local
+spec:
+  storageClassName: managed-storage
+  capacity:
+    storage: 6Gi
+  accessModes:
+    - ReadWriteOnce
+  local:
+    path: /mnt/disk/vol7
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - kubernetes1
+
+---
+
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: vol2
+  labels:
+    type: local
+spec:
+  storageClassName: managed-storage
+  capacity:
+    storage: 6Gi
+  accessModes:
+    - ReadWriteOnce
+  local:
+    path: /mnt/disk/vol8
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - kubernetes1

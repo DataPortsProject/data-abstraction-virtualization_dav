@@ -1,0 +1,37 @@
+version: "3.5"
+services:
+    nifi:
+        image: iccs/vdc:1.0
+        container_name: vdc
+        restart: unless-stopped
+        ports:
+            - 8443:8443
+            - 8800:8800
+            - 8801:8801
+            - 8802:8802
+        environment:
+            - NIFI_WEB_HTTPS_PORT=8443
+            - SINGLE_USER_CREDENTIALS_USERNAME=admin
+            - SINGLE_USER_CREDENTIALS_PASSWORD=admin_password
+            - NIFI_WEB_PROXY_HOST=
+            - NIFI_WEB_HTTPS_HOST=0.0.0.0
+            - NIFI_WEB_PROXY_HOST=147.102.19.41:8443
+            - NIFI_CLUSTER_ADDRESS=0.0.0.0
+            - NIFI_REMOTE_INPUT_HOST=0.0.0.0
+            - VDC_METADATA_PORT=8801
+            - VDC_METADATA_MONGODB_URI=mongodb://147.102.19.3:27017
+            - VDC_SERVICE_PORT=8800
+            - VDC_SPARK_MASTER_URI=spark://147.102.19.41:7077
+            - VDC_SPARK_REST_URL=http://147.102.19.41:6066/v1/submissions/create
+            - VDC_ACK_API_PORT=8802
+        networks:
+          vdc-network:
+            ipv4_address: 172.20.0.2
+networks:
+    vdc-network:
+        name: vdc-network
+        driver: bridge
+        ipam:
+            driver: default
+            config:
+                - subnet: 172.20.0.0/16
